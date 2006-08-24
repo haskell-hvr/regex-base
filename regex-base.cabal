@@ -28,7 +28,7 @@ Buildable:              True
 -- Other-Modules:
 -- ********* Be backward compatible until 6.4.2 is futher deployed
 -- HS-Source-Dirs:         "."
--- Extensions:
+Extensions:             MultiParamTypeClasses, FunctionalDependencies
 -- GHC-Options:            -Wall -Werror
 GHC-Options:            -Wall -Werror -O2
 -- GHC-Options:            -Wall -ddump-minimal-imports
