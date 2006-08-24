@@ -16,7 +16,7 @@ Synopsis:               Replaces/Enhances Text.Regex
 Description:            Interface API for regex-posix,pcre,parsec,dfa
 Category:               Text
 Tested-With:            GHC
-Build-Depends:          base, fps >= 0.7
+Build-Depends:          base >= 2.0
 -- Data-Files:
 -- Extra-Source-Files:     Text/Regex/Lazy/TestCompat.hs, Text/Regex/Lazy/TestFull.hs, Text/Regex/Impl/TestContext.hs, TestTextRegexLazy.hs, Example.hs, Example2.hs, lazy.html, README, Makefile
 -- Extra-Tmp-Files:
