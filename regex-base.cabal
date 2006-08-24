@@ -28,7 +28,6 @@ Buildable:              True
 -- Other-Modules:
 -- ********* Be backward compatible until 6.4.2 is futher deployed
 -- HS-Source-Dirs:         "."
-HS-Source-Dir:          "."
 -- Extensions:
 -- GHC-Options:            -Wall -Werror
 GHC-Options:            -Wall -Werror -O2
