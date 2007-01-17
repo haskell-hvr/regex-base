@@ -2,7 +2,7 @@
 -- To fix for cabal < 1.1.4 comment out the Extra-Source-Files line
 -- ****************************************************************
 Name:                   regex-base
-Version:                0.71
+Version:                0.80
 -- Cabal-Version:       >=1.1.4
 License:                BSD3
 License-File:           LICENSE
@@ -18,7 +18,7 @@ Category:               Text
 Tested-With:            GHC
 Build-Depends:          base >= 2.0
 -- Data-Files:
--- Extra-Source-Files:     Text/Regex/Lazy/TestCompat.hs, Text/Regex/Lazy/TestFull.hs, Text/Regex/Impl/TestContext.hs, TestTextRegexLazy.hs, Example.hs, Example2.hs, lazy.html, README, Makefile
+-- Extra-Source-Files:
 -- Extra-Tmp-Files:
 Exposed-Modules:        Text.Regex.Base
                         Text.Regex.Base.RegexLike
@@ -26,7 +26,6 @@ Exposed-Modules:        Text.Regex.Base
                         Text.Regex.Base.Impl
 Buildable:              True
 -- Other-Modules:
--- ********* Be backward compatible until 6.4.2 is futher deployed
 -- HS-Source-Dirs:         "."
 Extensions:             MultiParamTypeClasses, FunctionalDependencies
 -- GHC-Options:            -Wall -Werror
