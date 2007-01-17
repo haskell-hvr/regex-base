@@ -38,10 +38,11 @@ module Text.Regex.Base.RegexLike (
   Extract(..),
   ) where
 
+import Data.Sequence as S(take,drop,empty,Seq)
 import Data.Array(Array,(!))
 import Data.Maybe(isJust)
-import Data.ByteString(ByteString)
-import qualified Data.ByteString as B (take,drop,empty)
+import qualified Data.ByteString as B (take,drop,empty,ByteString)
+import qualified Data.ByteString.Lazy as L (take,drop,empty,ByteString)
 
 -- | 0 based index from start of source, or (-1) for unused
 type MatchOffset = Int
@@ -51,7 +52,6 @@ type MatchLength = Int
 -- full match location is not available, represent as (0,0).
 type MatchArray = Array Int (MatchOffset,MatchLength)
 type MatchText source = Array Int (source,(MatchOffset,MatchLength))
-
 
 -- | This is the same as the type from JRegex.
 data MatchResult a = MR {
@@ -154,5 +154,11 @@ class Extract source where
 instance Extract String where
   before =  take; after = drop; empty = []
 
-instance Extract ByteString where
+instance Extract B.ByteString where
   before = B.take; after = B.drop; empty = B.empty
+
+instance Extract L.ByteString where
+  before = L.take; after = L.drop; empty = L.empty
+
+instance Extract (S.Seq a) where
+  before = S.take; after = S.drop; empty = S.empty
