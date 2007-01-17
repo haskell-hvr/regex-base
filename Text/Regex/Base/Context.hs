@@ -216,7 +216,7 @@ instance (RegexLike a b) => RegexContext a b (MatchResult b) where
            , mrMatch = whole
            , mrAfter = post
            , mrSubs = fmap fst ma
-           , mrSubList = tail (map fst subs) })
+           , mrSubList = map fst subs })
 
 -- ** Instances based on matchAll,matchAllText
 
