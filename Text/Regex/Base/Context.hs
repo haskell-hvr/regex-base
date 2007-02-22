@@ -60,7 +60,7 @@ These are for the first match:
 (@ RegexLike a b => RegexContext a b (MatchResult b) @) :
   The 'MatchResult' structure for the match.
 
-These instances are for all the matches (non-overlapping):
+These instances are for all the matches (non-overlapping).  Note that backends are supposed to supply RegexLike instances for which matchAll and matchAllText stop searching after returning any successful but empty match.
 
 (@ RegexLike a b => RegexContext a b Int @) :
   The number of matches
