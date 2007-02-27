@@ -41,7 +41,7 @@
 -- TODO: Copy Example*hs files into this haddock comment
 -----------------------------------------------------------------------------
 
-module Text.Regex.Base (getVersion
+module Text.Regex.Base (getVersion_Text_Regex_Base
   -- | RegexLike defines classes and type, and 'Extract' instances
   ,module Text.Regex.Base.RegexLike
   -- | Context only exports instances for 'RegexContext'
@@ -51,7 +51,8 @@ import Data.Version(Version(..))
 import Text.Regex.Base.RegexLike
 import Text.Regex.Base.Context
 
-getVersion :: Version
-getVersion = Version { versionBranch = [0,81]
-                     , versionTags = ["base","unstable"]
-                     }
+getVersion_Text_Regex_Base :: Version
+getVersion_Text_Regex_Base =
+  Version { versionBranch = [0,82]
+          , versionTags = ["unstable"]
+          }

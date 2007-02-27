@@ -2,7 +2,7 @@
 -- To fix for cabal < 1.1.4 comment out the Extra-Source-Files line
 -- ****************************************************************
 Name:                   regex-base
-Version:                0.81
+Version:                0.82
 -- Cabal-Version:       >=1.1.4
 License:                BSD3
 License-File:           LICENSE
