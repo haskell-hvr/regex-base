@@ -144,8 +144,6 @@ class (Extract source)=> RegexLike regex source where
   matchCount :: regex -> source-> Int
   -- | matchTest return True if there is a match somewhere in the
   -- source (it checks the whole source not just at the start).
-  -- Equivalent to 'maybe False ((-1/=).fst.(!0)) (matchAll regex
-  -- source)'.
   matchTest  :: regex -> source-> Bool
   -- | This is matchAll with the actual subsections of the source
   -- instead of just the (offset,length) information.
