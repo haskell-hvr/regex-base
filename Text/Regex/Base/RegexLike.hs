@@ -38,7 +38,7 @@ module Text.Regex.Base.RegexLike (
   Extract(..),
   ) where
 
-import Control.Monad.Error(MonadError(..))
+import Control.Monad.Error()
 import Data.Array(Array,(!))
 import Data.Maybe(isJust)
 import qualified Data.ByteString as B (take,drop,empty,ByteString)
@@ -101,10 +101,10 @@ class (RegexOptions regex compOpt execOpt) => RegexMaker regex compOpt execOpt s
   makeRegex :: source -> regex
   -- | Specify your own options
   makeRegexOpts :: compOpt -> execOpt -> source -> regex
-  -- | make using the defaultCompOpt and defaultExecOpt, reporting errors
-  makeRegexM :: (MonadError e m) => source -> m regex
-  -- | Specify your own options, reporting errors
-  makeRegexOptsM :: (MonadError e m) => compOpt -> execOpt -> source -> m regex
+  -- | make using the defaultCompOpt and defaultExecOpt, reporting errors with fail
+  makeRegexM :: (Monad m) => source -> m regex
+  -- | Specify your own options, reporting errors with fail
+  makeRegexOptsM :: (Monad m) => compOpt -> execOpt -> source -> m regex
 
   makeRegex = makeRegexOpts defaultCompOpt defaultExecOpt
   makeRegexM = makeRegexOptsM defaultCompOpt defaultExecOpt
