@@ -53,6 +53,6 @@ import Text.Regex.Base.Context
 
 getVersion_Text_Regex_Base :: Version
 getVersion_Text_Regex_Base =
-  Version { versionBranch = [0,82]
+  Version { versionBranch = [0,83]
           , versionTags = ["unstable"]
           }
