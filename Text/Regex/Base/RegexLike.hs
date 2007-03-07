@@ -36,6 +36,7 @@ module Text.Regex.Base.RegexLike (
   RegexLike(..),
   RegexContext(..),
   Extract(..),
+  AllSubmatches(..),AllTextSubmatches(..),AllMatches(..),AllTextMatches(..)
   ) where
 
 import Control.Monad.Error()
@@ -217,3 +218,9 @@ instance Extract L.ByteString where
 
 instance Extract (S.Seq a) where
   before = S.take; after = S.drop; empty = S.empty
+
+-- Using AllSubmatches to avoid instance overlaps
+newtype AllSubmatches f b = AllSubmatches {getAllSubmatches :: (f b)}
+newtype AllTextSubmatches f b = AllTextSubmatches (f b)
+newtype AllMatches f b = AllMatches (f b)
+newtype AllTextMatches f b = AllTextMatches (f b)
