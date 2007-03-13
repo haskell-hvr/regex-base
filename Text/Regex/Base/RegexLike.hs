@@ -219,8 +219,11 @@ instance Extract L.ByteString where
 instance Extract (S.Seq a) where
   before = S.take; after = S.drop; empty = S.empty
 
--- Using AllSubmatches to avoid instance overlaps
+-- | Used in results of RegexContext instances
 newtype AllSubmatches f b = AllSubmatches {getAllSubmatches :: (f b)}
-newtype AllTextSubmatches f b = AllTextSubmatches (f b)
-newtype AllMatches f b = AllMatches (f b)
-newtype AllTextMatches f b = AllTextMatches (f b)
+-- | Used in results of RegexContext instances
+newtype AllTextSubmatches f b = AllTextSubmatches {getAllTextSubmatches :: (f b)}
+-- | Used in results of RegexContext instances
+newtype AllMatches f b = AllMatches {getAllMatches :: (f b)}
+-- | Used in results of RegexContext instances
+newtype AllTextMatches f b = AllTextMatches {getAllTextMatches :: (f b) }
