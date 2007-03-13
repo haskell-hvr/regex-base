@@ -47,9 +47,9 @@ detection but are needed for use in Hugs.
 
 @
 newtype AllSubmatches f b = AllSubmatches {getAllSubmatches :: (f b)}
-newtype AllTextSubmatches f b = AllTextSubmatches (f b)
-newtype AllMatches f b = AllMatches (f b)
-newtype AllTextMatches f b = AllTextMatches (f b)
+newtype AllTextSubmatches f b = AllTextSubmatches {getAllTextSubmatches :: (f b)}
+newtype AllMatches f b = AllMatches {getAllMatches :: (f b)}
+newtype AllTextMatches f b = AllTextMatches {getAllTextMatches :: (f b) }
 @
 
 The newtypes' @f@ parameters are the containers, usually @[]@ or
