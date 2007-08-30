@@ -39,7 +39,6 @@ module Text.Regex.Base.RegexLike (
   AllSubmatches(..),AllTextSubmatches(..),AllMatches(..),AllTextMatches(..)
   ) where
 
-import Control.Monad.Error()
 import Data.Array(Array,(!))
 import Data.Maybe(isJust)
 import qualified Data.ByteString as B (take,drop,empty,ByteString)
@@ -109,7 +108,7 @@ class (RegexOptions regex compOpt execOpt) => RegexMaker regex compOpt execOpt s
 
   makeRegex = makeRegexOpts defaultCompOpt defaultExecOpt
   makeRegexM = makeRegexOptsM defaultCompOpt defaultExecOpt
-  makeRegexOpts c e s = either error id (makeRegexOptsM c e s)
+  makeRegexOpts c e s = maybe (error "makeRegexOpts failed") id (makeRegexOptsM c e s)
   makeRegexOptsM c e s = return (makeRegexOpts c e s)
 
 ----------------
