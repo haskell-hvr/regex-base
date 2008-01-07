@@ -1,5 +1,6 @@
 Name:                   regex-base
-Version:                0.92
+-- Keep the version below in sync with ./Text/Regex/Base.hs value getVersion_Text_Regex_Base :: Version
+Version:                0.93
 Cabal-Version:          >=1.2
 License:                BSD3
 License-File:           LICENSE
@@ -17,9 +18,9 @@ flag splitBase
   description: Choose the new smaller, split-up base package.
 library
   if flag(splitBase)
-    build-depends:          base >= 3.0, mtl, containers, bytestring, array
+    Build-Depends:      base >= 3.0, mtl, containers, bytestring, array
   else
-    build-depends: base < 3.0, mtl
+    Build-Depends:      base < 3.0, mtl
   -- Data-Files:
   -- Extra-Source-Files:
   -- Extra-Tmp-Files:
@@ -31,8 +32,8 @@ library
   -- Other-Modules:
   -- HS-Source-Dirs:         "."
   Extensions:             MultiParamTypeClasses, FunctionalDependencies
-  -- GHC-Options:            -Wall -Werror -O2
   GHC-Options:            -Wall -O2
+  -- GHC-Options:            -Wall -Werror -O2
   -- GHC-Options:            -Wall -ddump-minimal-GHC
   -- imports-Prof-Options:       -auto-all
   -- Hugs-Options:
