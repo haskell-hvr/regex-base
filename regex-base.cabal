@@ -1,6 +1,6 @@
 Name:                   regex-base
 -- Keep the version below in sync with ./Text/Regex/Base.hs value getVersion_Text_Regex_Base :: Version
-Version:                0.93
+Version:                0.93.1
 Cabal-Version:          >=1.2
 License:                BSD3
 License-File:           LICENSE
