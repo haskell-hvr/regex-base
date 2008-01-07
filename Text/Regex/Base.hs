@@ -43,13 +43,11 @@
 
 module Text.Regex.Base (getVersion_Text_Regex_Base
   -- | RegexLike defines classes and type, and 'Extract' instances
-  ,module Text.Regex.Base.RegexLike
-  -- | Context only exports instances for 'RegexContext'
-  ,module Text.Regex.Base.Context) where
+  ,module Text.Regex.Base.RegexLike) where
 
 import Data.Version(Version(..))
 import Text.Regex.Base.RegexLike
-import Text.Regex.Base.Context
+import Text.Regex.Base.Context()
 
 getVersion_Text_Regex_Base :: Version
 getVersion_Text_Regex_Base =
