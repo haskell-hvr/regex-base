@@ -1,4 +1,5 @@
-{-# OPTIONS_GHC -fglasgow-exts #-}
+{-# LANGUAGE MultiParamTypeClasses, FunctionalDependencies #-}
+{-# OPTIONS_GHC -fno-warn-orphans #-}
 {-|
 
 Module      :  Text.Regex.Base.Context
