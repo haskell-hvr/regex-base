@@ -188,7 +188,7 @@ module Text.Regex.Base.Context() where
 
 import Control.Monad(liftM)
 import Data.Array(Array,(!),elems,listArray)
-import Data.Maybe(maybe)
+--  import Data.Maybe(maybe)
 import Text.Regex.Base.RegexLike(RegexLike(..),RegexContext(..)
   ,AllSubmatches(..),AllTextSubmatches(..),AllMatches(..),AllTextMatches(..)
   ,MatchResult(..),Extract(empty),MatchOffset,MatchLength,MatchArray,MatchText)
