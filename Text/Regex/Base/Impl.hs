@@ -30,6 +30,12 @@
 --   match = polymatch
 --   matchM = polymatchM
 -- @
+-- 
+-- @
+-- instance RegexContext Regex Text Text where
+--   match = polymatch
+--   matchM = polymatchM
+-- @
 -------------------------------------------------------------------------------
 
 module Text.Regex.Base.Impl(polymatch,polymatchM) where

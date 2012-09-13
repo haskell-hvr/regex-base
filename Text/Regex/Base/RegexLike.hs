@@ -15,11 +15,11 @@
 -- All the classes are declared here, and some common type aliases, and
 -- the MatchResult data type.
 -- 
--- The only instances here are for Extract String and Extract ByteString.
--- There are no data values.  The 'RegexContext' instances are in
--- "Text.Regex.Base.Context", except for ones which run afoul of a
--- repeated variable (RegexContext regex a a), which are defined in each
--- modules' String and ByteString modules.
+-- The only instances here are for Extract String, Extract ByteString
+-- and Extract Text. There are no data values.  The 'RegexContext'
+-- instances are in "Text.Regex.Base.Context", except for ones which
+-- run afoul of a repeated variable (RegexContext regex a a), which
+-- are defined in each modules' String and ByteString modules.
 -----------------------------------------------------------------------------
 
 module Text.Regex.Base.RegexLike (
@@ -44,9 +44,11 @@ import Control.Monad.Fail as Fail (MonadFail)
 
 import Data.Array(Array,(!))
 import Data.Maybe(isJust)
-import qualified Data.ByteString as B (take,drop,empty,ByteString)
-import qualified Data.ByteString.Lazy as L (take,drop,empty,ByteString)
+import qualified Data.ByteString as SB (take,drop,empty,ByteString)
+import qualified Data.ByteString.Lazy as LB (take,drop,empty,ByteString)
 import qualified Data.Sequence as S(take,drop,empty,Seq)
+import qualified Data.Text as ST (take,drop,empty,Text)
+import qualified Data.Text.Lazy as LT (take,drop,empty,Text)
 
 -- | 0 based index from start of source, or (-1) for unused
 type MatchOffset = Int
@@ -212,14 +214,20 @@ class Extract source where
 instance Extract String where
   before =  take; after = drop; empty = []
 
-instance Extract B.ByteString where
-  before = B.take; after = B.drop; empty = B.empty
+instance Extract SB.ByteString where
+  before = SB.take; after = SB.drop; empty = SB.empty
 
-instance Extract L.ByteString where
-  before = L.take . toEnum; after = L.drop . toEnum; empty = L.empty
+instance Extract LB.ByteString where
+  before = LB.take . toEnum; after = LB.drop . toEnum; empty = LB.empty
 
 instance Extract (S.Seq a) where
   before = S.take; after = S.drop; empty = S.empty
+
+instance Extract ST.Text where
+  before = ST.take; after = ST.drop; empty = ST.empty
+
+instance Extract LT.Text where
+  before = LT.take . toEnum; after = LT.drop . toEnum; empty = LT.empty
 
 -- | Used in results of RegexContext instances
 newtype AllSubmatches f b = AllSubmatches {getAllSubmatches :: (f b)}
