@@ -6,7 +6,7 @@
 -- Copyright   :  (c) Chris Kuklewicz 2006
 -- License     :  BSD-style (see the file LICENSE)
 -- 
--- Maintainer  :  libraries@haskell.org, textregexlazy@personal.mightyreason.com
+-- Maintainer  :  hvr@gnu.org
 -- Stability   :  experimental
 -- Portability :  non-portable (MPTC+FD)
 --
@@ -49,8 +49,10 @@ import Data.Version(Version(..))
 import Text.Regex.Base.RegexLike
 import Text.Regex.Base.Context()
 
+import qualified Paths_regex_base
+
 getVersion_Text_Regex_Base :: Version
 getVersion_Text_Regex_Base =
-  Version { versionBranch = [0,93,2]
+  Version { versionBranch = versionBranch Paths_regex_base.version
           , versionTags = ["unstable"]
           }

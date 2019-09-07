@@ -6,7 +6,7 @@ Module      :  Text.Regex.Base.Context
 Copyright   :  (c) Chris Kuklewicz 2006
 License     :  BSD-style (see the file LICENSE)
 
-Maintainer  :  libraries@haskell.org, textregexlazy@personal.mightyreason.com
+Maintainer  :  hvr@gnu.org
 Stability   :  experimental
 Portability :  non-portable (MPTC+FD)
 
