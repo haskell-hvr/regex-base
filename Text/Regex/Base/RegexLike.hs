@@ -102,9 +102,9 @@ class (RegexOptions regex compOpt execOpt) => RegexMaker regex compOpt execOpt s
   -- | Specify your own options
   makeRegexOpts :: compOpt -> execOpt -> source -> regex
   -- | make using the defaultCompOpt and defaultExecOpt, reporting errors with fail
-  makeRegexM :: (Monad m) => source -> m regex
+  makeRegexM :: (MonadFail m) => source -> m regex
   -- | Specify your own options, reporting errors with fail
-  makeRegexOptsM :: (Monad m) => compOpt -> execOpt -> source -> m regex
+  makeRegexOptsM :: (MonadFail m) => compOpt -> execOpt -> source -> m regex
 
   makeRegex = makeRegexOpts defaultCompOpt defaultExecOpt
   makeRegexM = makeRegexOptsM defaultCompOpt defaultExecOpt
@@ -189,7 +189,7 @@ class (Extract source)=> RegexLike regex source where
 -- > ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
 class (RegexLike regex source) => RegexContext regex source target where
   match :: regex -> source -> target
-  matchM :: (Monad m) => regex -> source -> m target
+  matchM :: (MonadFail m) => regex -> source -> m target
 
 ----------------
 -- | Extract allows for indexing operations on String or ByteString.

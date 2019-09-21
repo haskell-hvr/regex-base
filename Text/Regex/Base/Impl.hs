@@ -37,11 +37,11 @@ module Text.Regex.Base.Impl(polymatch,polymatchM) where
 import Text.Regex.Base
 import Data.Array((!))
 
-regexFailed :: (Monad m) => m b
+regexFailed :: (MonadFail m) => m b
 {-# INLINE regexFailed #-}
 regexFailed =  fail $ "regex failed to match"
 
-actOn :: (RegexLike r s,Monad m) => ((s,MatchText s,s)->t) -> r -> s -> m t
+actOn :: (RegexLike r s,MonadFail m) => ((s,MatchText s,s)->t) -> r -> s -> m t
 {-# INLINE actOn #-}
 actOn f r s = case matchOnceText r s of
     Nothing -> regexFailed
@@ -53,6 +53,6 @@ polymatch r s = case matchOnceText r s of
     Nothing -> empty
     Just (_,ma,_) -> fst (ma!0)
 
-polymatchM :: (RegexLike a b,Monad m) => a -> b -> m b
+polymatchM :: (RegexLike a b,MonadFail m) => a -> b -> m b
 {-# INLINE polymatchM #-}
 polymatchM =  actOn (\(_,ma,_)->fst (ma!0))

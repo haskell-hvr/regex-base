@@ -244,29 +244,29 @@ nullArray :: Array Int a
 {-# INLINE nullArray #-}
 nullArray = listArray (1,0) []
 
-nullFail :: (RegexContext regex source (AllMatches [] target),Monad m) => regex -> source -> m (AllMatches [] target)
+nullFail :: (RegexContext regex source (AllMatches [] target),MonadFail m) => regex -> source -> m (AllMatches [] target)
 {-# INLINE nullFail #-}
 nullFail r s = case match r s of
                  (AllMatches []) -> regexFailed
                  xs -> return xs
 
-nullFailText :: (RegexContext regex source (AllTextMatches [] target),Monad m) => regex -> source -> m (AllTextMatches [] target)
+nullFailText :: (RegexContext regex source (AllTextMatches [] target),MonadFail m) => regex -> source -> m (AllTextMatches [] target)
 {-# INLINE nullFailText #-}
 nullFailText r s = case match r s of
                      (AllTextMatches []) -> regexFailed
                      xs -> return xs
 
-nullFail' :: (RegexContext regex source ([] target),Monad m) => regex -> source -> m ([] target)
+nullFail' :: (RegexContext regex source ([] target),MonadFail m) => regex -> source -> m ([] target)
 {-# INLINE nullFail' #-}
 nullFail' r s = case match r s of
                  ([]) -> regexFailed
                  xs -> return xs
 
-regexFailed :: (Monad m) => m b
+regexFailed :: (MonadFail m) => m b
 {-# INLINE regexFailed #-}
 regexFailed =  fail $ "regex failed to match"
 
-actOn :: (RegexLike r s,Monad m) => ((s,MatchText s,s)->t) -> r -> s -> m t
+actOn :: (RegexLike r s,MonadFail m) => ((s,MatchText s,s)->t) -> r -> s -> m t
 {-# INLINE actOn #-}
 actOn f r s = case matchOnceText r s of
     Nothing -> regexFailed
