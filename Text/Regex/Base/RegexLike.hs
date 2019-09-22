@@ -39,6 +39,9 @@ module Text.Regex.Base.RegexLike (
   AllSubmatches(..),AllTextSubmatches(..),AllMatches(..),AllTextMatches(..)
   ) where
 
+import Prelude hiding (fail)
+import Control.Monad.Fail as Fail (MonadFail)
+
 import Data.Array(Array,(!))
 import Data.Maybe(isJust)
 import qualified Data.ByteString as B (take,drop,empty,ByteString)
@@ -102,7 +105,7 @@ class (RegexOptions regex compOpt execOpt) => RegexMaker regex compOpt execOpt s
   -- | Specify your own options
   makeRegexOpts :: compOpt -> execOpt -> source -> regex
   -- | make using the defaultCompOpt and defaultExecOpt, reporting errors with fail
-  makeRegexM :: (MonadFail m) => source -> m regex
+  makeRegexM :: (Fail.MonadFail m) => source -> m regex
   -- | Specify your own options, reporting errors with fail
   makeRegexOptsM :: (MonadFail m) => compOpt -> execOpt -> source -> m regex
 

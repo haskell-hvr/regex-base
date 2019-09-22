@@ -34,6 +34,9 @@
 
 module Text.Regex.Base.Impl(polymatch,polymatchM) where
 
+import Prelude hiding (fail)
+import Control.Monad.Fail (MonadFail(fail))
+
 import Text.Regex.Base
 import Data.Array((!))
 

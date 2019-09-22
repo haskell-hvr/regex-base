@@ -186,6 +186,9 @@ Unused matches are 'empty' (defined via 'Extract')
 
 module Text.Regex.Base.Context() where
 
+import Prelude hiding (fail)
+import Control.Monad.Fail (MonadFail(fail)) -- see 'regexFailed'
+
 import Control.Monad(liftM)
 import Data.Array(Array,(!),elems,listArray)
 --  import Data.Maybe(maybe)

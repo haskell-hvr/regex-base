@@ -52,7 +52,4 @@ import Text.Regex.Base.Context()
 import qualified Paths_regex_base
 
 getVersion_Text_Regex_Base :: Version
-getVersion_Text_Regex_Base =
-  Version { versionBranch = versionBranch Paths_regex_base.version
-          , versionTags = ["unstable"]
-          }
+getVersion_Text_Regex_Base = Paths_regex_base.version
