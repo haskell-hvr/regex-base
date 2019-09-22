@@ -4,21 +4,20 @@
 -- Module      :  Text.Regex.Base.RegexLike
 -- Copyright   :  (c) Chris Kuklewicz 2006
 -- License     :  BSD-style (see the file LICENSE)
--- 
+--
 -- Maintainer  :  hvr@gnu.org
 -- Stability   :  experimental
 -- Portability :  non-portable (MPTC+FD)
 --
 -- Classes and instances for Regex matching.
 --
--- 
 -- All the classes are declared here, and some common type aliases, and
 -- the MatchResult data type.
--- 
--- The only instances here are for Extract String, Extract ByteString
--- and Extract Text. There are no data values.  The 'RegexContext'
+--
+-- The only instances here are for 'Extract' 'String', 'Extract' 'SB.ByteString',
+-- and 'Extract' 'ST.Text'. There are no data values.  The 'RegexContext'
 -- instances are in "Text.Regex.Base.Context", except for ones which
--- run afoul of a repeated variable (RegexContext regex a a), which
+-- run afoul of a repeated variable ('RegexContext' regex a a), which
 -- are defined in each modules' String and ByteString modules.
 -----------------------------------------------------------------------------
 
@@ -223,9 +222,11 @@ instance Extract LB.ByteString where
 instance Extract (S.Seq a) where
   before = S.take; after = S.drop; empty = S.empty
 
+-- | @since 0.94.0.0
 instance Extract ST.Text where
   before = ST.take; after = ST.drop; empty = ST.empty
 
+-- | @since 0.94.0.0
 instance Extract LT.Text where
   before = LT.take . toEnum; after = LT.drop . toEnum; empty = LT.empty
 
