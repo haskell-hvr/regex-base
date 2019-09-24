@@ -4,7 +4,7 @@
 --
 -- Module      :  Text.Regex.Base
 -- Copyright   :  (c) Chris Kuklewicz 2006
--- License     :  BSD-style (see the file LICENSE)
+-- SPDX-License-Identifier: BSD-3-Clause
 --
 -- Maintainer  :  hvr@gnu.org
 -- Stability   :  experimental
@@ -45,7 +45,6 @@
 -- @
 -- import Text.Regex.Base
 -- import Text.Regex.Posix((=~),(=~~)) -- or DFA or PCRE or PosixRE
--- import qualified Data.ByteString.Char8 as B(ByteString,pack)
 --
 -- main = let b :: Bool
 --            b = ("abaca" =~ "(.)a")
