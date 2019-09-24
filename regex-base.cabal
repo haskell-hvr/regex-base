@@ -9,7 +9,7 @@ copyright:              Copyright (c) 2006, Christopher Kuklewicz
 author:                 Christopher Kuklewicz
 maintainer:             hvr@gnu.org
 homepage:               https://wiki.haskell.org/Regular_expressions
-bug-reports:            https://github.com/hvr/regex-base
+bug-reports:            https://github.com/hvr/regex-base/issues
 synopsis:               Common "Text.Regex.*" API for Regex matching
 category:               Text
 description:
@@ -47,7 +47,7 @@ library
       Paths_regex_base
 
   default-language: Haskell2010
-  default-extensions:
+  other-extensions:
       MultiParamTypeClasses
       FunctionalDependencies
       TypeSynonymInstances
