@@ -8,4 +8,6 @@ See also http://pvp.haskell.org/faq
 
 - Compatibility with `base-4.13.0`
 
+- Explicitly declare all modules `Safe` under SafeHaskell for GHC 7.4 and higher
+
 ----
