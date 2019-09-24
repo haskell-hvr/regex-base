@@ -8,22 +8,24 @@ license-file:           LICENSE
 copyright:              Copyright (c) 2006, Christopher Kuklewicz
 author:                 Christopher Kuklewicz
 maintainer:             hvr@gnu.org
+homepage:               https://wiki.haskell.org/Regular_expressions
 bug-reports:            https://github.com/hvr/regex-base
-synopsis:               Replaces/Enhances "Text.Regex"
+synopsis:               Common "Text.Regex.*" API for Regex matching
 category:               Text
 description:
-  This package provides the common interface API that is implemented by packages such as
+  This package doesn't provide the ability to do regex matching, but instead provides the type-classes that constitute the abstract API that is implemented by @regex-*@ backends such as
   .
   * <//hackage.haskell.org/package/regex-posix regex-posix>
   .
-  * <//hackage.haskell.org/package/regex-pcre regex-pcre>
-  .
   * <//hackage.haskell.org/package/regex-parsec regex-parsec>
-  .
-  * <//hackage.haskell.org/package/regex-tdfa regex-tdfa>
   .
   * <//hackage.haskell.org/package/regex-dfa regex-dfa>
   .
+  * <//hackage.haskell.org/package/regex-tdfa regex-tdfa>
+  .
+  * <//hackage.haskell.org/package/regex-pcre regex-pcre>
+  .
+  See also <https://wiki.haskell.org/Regular_expressions> for more information.
 
 extra-source-files:
   ChangeLog.md
