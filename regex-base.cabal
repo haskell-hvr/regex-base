@@ -25,13 +25,16 @@ description:
   * <//hackage.haskell.org/package/regex-dfa regex-dfa>
   .
 
-extra-source-files: ChangeLog.md
+extra-source-files:
+  ChangeLog.md
 
 source-repository head
   type:     git
   location: https://github.com/hvr/regex-base.git
 
 library
+  hs-source-dirs: src
+
   exposed-modules:
       Text.Regex.Base
       Text.Regex.Base.RegexLike
@@ -49,7 +52,7 @@ library
       FlexibleInstances
       FlexibleContexts
 
-  build-Depends: base       >= 4.3 && < 4.14
+  build-depends: base       >= 4.3 && < 4.14
                , mtl        >= 1.1 && < 2.3
                , containers >= 0.4 && < 0.7
                , bytestring >= 0.9 && < 0.11
