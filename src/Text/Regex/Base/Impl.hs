@@ -3,34 +3,34 @@
 -- Module      :  Text.Regex.Impl
 -- Copyright   :  (c) Chris Kuklewicz 2006
 -- SPDX-License-Identifier: BSD-3-Clause
--- 
+--
 -- Maintainer  :  hvr@gnu.org
 -- Stability   :  experimental
 -- Portability :  non-portable (Text.Regex.Base needs MPTC+FD)
--- 
+--
 -- Helper functions for defining certain instances of
--- RegexContext. These help when defining instances of RegexContext
+-- 'RegexContext'. These help when defining instances of 'RegexContext'
 -- with repeated types:
--- 
+--
 -- @
 -- instance (RegexLike regex source) => RegexContext regex source source where
 -- @
--- 
+--
 -- runs into overlapping restrictions. To avoid this I have each backend
--- define, for its own Regex type:
--- 
+-- define, for its own @Regex@ type:
+--
 -- @
 -- instance RegexContext Regex String String where
 --   match = polymatch
 --   matchM = polymatchM
 -- @
--- 
+--
 -- @
 -- instance RegexContext Regex ByteString ByteString where
 --   match = polymatch
 --   matchM = polymatchM
 -- @
--- 
+--
 -- @
 -- instance RegexContext Regex Text Text where
 --   match = polymatch
@@ -60,8 +60,8 @@ polymatch :: (RegexLike a b) => a -> b -> b
 {-# INLINE polymatch #-}
 polymatch r s = case matchOnceText r s of
     Nothing -> empty
-    Just (_,ma,_) -> fst (ma!0)
+    Just (_, ma, _) -> fst (ma ! 0)
 
 polymatchM :: (RegexLike a b,MonadFail m) => a -> b -> m b
 {-# INLINE polymatchM #-}
-polymatchM =  actOn (\(_,ma,_)->fst (ma!0))
+polymatchM =  actOn (\ (_, ma, _) -> fst (ma ! 0))
