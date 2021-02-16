@@ -23,17 +23,17 @@
 -- they all use.  The modules which provide the backends and their cabal
 -- packages are:
 --
---  * @Text.Regex.Posix@ from regex-posix
+--  * @<https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html Text.Regex.Posix>@ from <https://hackage.haskell.org/package/regex-posix regex-posix>
 --
---  * @Text.Regex@ from regex-compat (uses regex-posix)
+--  * @<https://hackage.haskell.org/package/regex-compat/docs/Text-Regex.html Text.Regex>@ from <https://hackage.haskell.org/package/regex-compat regex-compat> (uses <https://hackage.haskell.org/package/regex-posix regex-posix>)
 --
---  * @Text.Regex.Parsec@ from regex-parsec
+--  * @<https://hackage.haskell.org/package/regex-parsec/docs/Text-Regex-Parsec.html Text.Regex.Parsec>@ from <https://hackage.haskell.org/package/regex-parsec regex-parsec>
 --
---  * @Text.Regex.DFA@ from regex-dfa
+--  * @<https://hackage.haskell.org/package/regex-dfa/docs/Text-Regex-DFA.html Text.Regex.DFA>@ from <https://hackage.haskell.org/package/regex-dfa regex-dfa>
 --
---  * @Text.Regex.PCRE@ from regex-pcre
+--  * @<https://hackage.haskell.org/package/regex-pcre/docs/Text-Regex-PCRE.html Text.Regex.PCRE>@ from <https://hackage.haskell.org/package/regex-pcre regex-pcre>
 --
---  * @Test.Regex.TRE@ from regex-tre
+--  * @<https://hackage.haskell.org/package/regex-tre/docs/Test-Regex-TRE.html Test.Regex.TRE>@ from <https://hackage.haskell.org/package/regex-tre regex-tre>
 --
 -- In fact, just importing one of the backends is adequate, you do not
 -- also need to import this module.

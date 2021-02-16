@@ -17,15 +17,15 @@ description:
   but instead provides the type-classes that constitute the abstract API
   that is implemented by @regex-*@ backends such as
   .
-  * <//hackage.haskell.org/package/regex-posix regex-posix>
+  * <https://hackage.haskell.org/package/regex-posix regex-posix>
   .
-  * <//hackage.haskell.org/package/regex-parsec regex-parsec>
+  * <https://hackage.haskell.org/package/regex-parsec regex-parsec>
   .
-  * <//hackage.haskell.org/package/regex-dfa regex-dfa>
+  * <https://hackage.haskell.org/package/regex-dfa regex-dfa>
   .
-  * <//hackage.haskell.org/package/regex-tdfa regex-tdfa>
+  * <https://hackage.haskell.org/package/regex-tdfa regex-tdfa>
   .
-  * <//hackage.haskell.org/package/regex-pcre regex-pcre>
+  * <https://hackage.haskell.org/package/regex-pcre regex-pcre>
   .
   See also <https://wiki.haskell.org/Regular_expressions> for more information.
 
