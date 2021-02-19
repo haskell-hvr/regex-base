@@ -13,9 +13,9 @@ bug-reports:            https://github.com/haskell-hvr/regex-base/issues
 synopsis:               Common "Text.Regex.*" API for Regex matching
 category:               Text
 description:
-  This package does not provide the ability to do regex matching,
-  but instead provides the type classes that constitute the abstract API
-  that is implemented by @regex-*@ backends such as
+  This package does not provide the ability to do regular expression matching.
+  Instead, it provides the type classes that constitute the abstract API
+  that is implemented by @regex-*@ backends such as:
   .
   * <https://hackage.haskell.org/package/regex-posix regex-posix>
   .
