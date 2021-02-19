@@ -31,7 +31,7 @@ result type @c@ using the 'match' class function.  The 'matchM' class
 function works like 'match' unless there is no match found, in which
 case it calls 'fail' in the (arbitrary) monad context.
 
-There are a few type synonyms from "RegexLike" that are used here:
+There are a few type synonyms from "Text.Regex.Base.RegexLike" that are used here:
 
 @
 -- | 0 based index from start of source, or (-1) for unused

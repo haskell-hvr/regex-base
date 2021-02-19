@@ -239,7 +239,7 @@ class Extract source where
   -- | When there is no match, this can construct an empty data value.
   empty :: source
 
-  -- | @extract@ takes an offset and length and thed default implementation:
+  -- | @extract@ takes an offset and length, and has this default implementation:
   --
   -- @
   --   extract (off, len) source = before len (after off source)
