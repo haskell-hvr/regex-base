@@ -11,7 +11,7 @@ Stability   :  experimental
 Portability :  non-portable (MPTC+FD)
 
 This is a module of instances of 'RegexContext' (defined in
-''Text.Regex.Base.RegexLike'').  Nothing else is exported.  This is
+"Text.Regex.Base.RegexLike").  Nothing else is exported.  This is
 usually imported via the ''Text.Regex.Base'' convenience package which
 itself is re-exported from newer @Text.Regex.XXX@ modules provided by
 the different @regex-xxx@ backends.
@@ -221,11 +221,11 @@ mood :: (RegexLike a b) => a -> b -> b
 {-# INLINE mood #-}
 mood r s = case matchOnceText r s of
     Nothing -> empty
-    Just (_,ma,_) -> fst (ma!0)
+    Just (_, ma, _) -> fst (ma ! 0)
 
 doom :: (RegexLike a b,Monad m) => a -> b -> m b
 {-# INLINE doom #-}
-doom =  actOn (\(_,ma,_)->fst (ma!0))
+doom =  actOn (\ (_, ma, _) -> fst (ma ! 0))
 
 {- These run afoul of various restrictions if I say
    "instance RegexContext a b b where"

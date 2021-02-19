@@ -4,6 +4,8 @@ See also http://pvp.haskell.org/faq
 
 - Compatibility with GHC 9.0 and `base-4.15`
 
+- Optimization flag `-O2` has been removed
+
 ## 0.94.0.0
 
 - **Breaking change**: Switch RegExp API from the previously used `Monad(fail)` to `MonadFail(fail)` to denote matching failures

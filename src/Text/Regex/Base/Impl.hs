@@ -60,8 +60,8 @@ polymatch :: (RegexLike a b) => a -> b -> b
 {-# INLINE polymatch #-}
 polymatch r s = case matchOnceText r s of
     Nothing -> empty
-    Just (_,ma,_) -> fst (ma!0)
+    Just (_, ma, _) -> fst (ma ! 0)
 
 polymatchM :: (RegexLike a b,MonadFail m) => a -> b -> m b
 {-# INLINE polymatchM #-}
-polymatchM =  actOn (\(_,ma,_)->fst (ma!0))
+polymatchM =  actOn (\ (_, ma, _) -> fst (ma ! 0))

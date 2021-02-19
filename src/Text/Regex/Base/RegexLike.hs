@@ -191,7 +191,7 @@ class (Extract source) => RegexLike regex source where
   matchTest regex source = isJust (matchOnce regex source)
   matchCount regex source = length (matchAll regex source)
   matchOnceText regex source =
-    fmap (\ma -> let (o,l) = ma!0
+    fmap (\ma -> let (o,l) = ma ! 0
                  in (before o source
                     ,fmap (\ol -> (extract ol source,ol)) ma
                     ,after (o+l) source))
