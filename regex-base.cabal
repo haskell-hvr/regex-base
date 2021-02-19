@@ -9,7 +9,7 @@ copyright:              Copyright (c) 2006, Christopher Kuklewicz
 author:                 Christopher Kuklewicz
 maintainer:             hvr@gnu.org
 homepage:               https://wiki.haskell.org/Regular_expressions
-bug-reports:            https://github.com/haskell-hvr/regex-base/issues
+bug-reports:            https://github.com/hvr/regex-base/issues
 synopsis:               Common "Text.Regex.*" API for Regex matching
 category:               Text
 description:
@@ -52,11 +52,11 @@ tested-with:
 
 source-repository head
   type:     git
-  location: https://github.com/haskell-hvr/regex-base.git
+  location: https://github.com/hvr/regex-base.git
 
 source-repository this
   type:     git
-  location: https://github.com/haskell-hvr/regex-base.git
+  location: https://github.com/hvr/regex-base.git
   tag:      v0.94.0.1
 
 library

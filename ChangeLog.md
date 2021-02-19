@@ -2,7 +2,7 @@ See also http://pvp.haskell.org/faq
 
 ## 0.94.0.1
 
-- Compatibility with GHC 9.0 and `base-4.15`
+- Workaround for `{-# LANGUAGE Haskell2010 #-}` parser regression introduced in GHC 9.0
 
 - Optimization flag `-O2` has been removed
 
