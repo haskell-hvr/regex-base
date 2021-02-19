@@ -14,7 +14,7 @@ synopsis:               Common "Text.Regex.*" API for Regex matching
 category:               Text
 description:
   This package does not provide the ability to do regex matching,
-  but instead provides the type-classes that constitute the abstract API
+  but instead provides the type classes that constitute the abstract API
   that is implemented by @regex-*@ backends such as
   .
   * <https://hackage.haskell.org/package/regex-posix regex-posix>

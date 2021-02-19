@@ -12,7 +12,7 @@ Portability :  non-portable (MPTC+FD)
 
 This is a module of instances of 'RegexContext' (defined in
 "Text.Regex.Base.RegexLike").  Nothing else is exported.  This is
-usually imported via the ''Text.Regex.Base'' convenience package which
+usually imported via the "Text.Regex.Base" convenience package which
 itself is re-exported from newer @Text.Regex.XXX@ modules provided by
 the different @regex-xxx@ backends.
 
@@ -31,7 +31,7 @@ result type @c@ using the 'match' class function.  The 'matchM' class
 function works like 'match' unless there is no match found, in which
 case it calls 'fail' in the (arbitrary) monad context.
 
-There are a few type synonyms from ''RegexLike'' that are used here:
+There are a few type synonyms from "RegexLike" that are used here:
 
 @
 -- | 0 based index from start of source, or (-1) for unused
