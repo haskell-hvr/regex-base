@@ -7,7 +7,9 @@ license:                BSD3
 license-file:           LICENSE
 copyright:              Copyright (c) 2006, Christopher Kuklewicz
 author:                 Christopher Kuklewicz
-maintainer:             hvr@gnu.org
+maintainer:
+  Herbert Valerio Riedel <hvr@gnu.org>,
+  Andreas Abel
 homepage:               https://wiki.haskell.org/Regular_expressions
 bug-reports:            https://github.com/hvr/regex-base/issues
 synopsis:               Common "Text.Regex.*" API for Regex matching
