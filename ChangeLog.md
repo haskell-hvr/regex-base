@@ -1,5 +1,9 @@
 See also http://pvp.haskell.org/faq
 
+## 0.94.0.1 Revision 1
+
+- Allow `base-4.16`, for GHC 9.2
+
 ## 0.94.0.1
 
 - Workaround for `{-# LANGUAGE Haskell2010 #-}` parser regression introduced in GHC 9.0
