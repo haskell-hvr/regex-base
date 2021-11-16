@@ -33,6 +33,7 @@ description:
 
 extra-source-files:
   ChangeLog.md
+  README.md
 
 tested-with:
   GHC == 7.0.4
