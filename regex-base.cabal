@@ -1,7 +1,6 @@
 cabal-version:          1.12
 name:                   regex-base
-version:                0.94.0.1
-x-revision:             1
+version:                0.94.0.2
 
 build-type:             Simple
 license:                BSD3
@@ -58,7 +57,7 @@ source-repository head
 source-repository this
   type:     git
   location: https://github.com/hvr/regex-base.git
-  tag:      v0.94.0.1
+  tag:      v0.94.0.2
 
 library
   hs-source-dirs: src
