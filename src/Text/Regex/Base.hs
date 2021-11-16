@@ -40,21 +40,23 @@
 --
 -- == Example
 --
--- The code below
+-- The code
 --
 -- @
 -- import Text.Regex.Base
--- import Text.Regex.Posix((=~),(=~~)) -- or DFA or PCRE or PosixRE
+-- import Text.Regex.Posix ((=~),(=~~)) -- or TDFA or PCRE or ...
 --
--- main = let b :: Bool
---            b = ("abaca" =~ "(.)a")
---            c :: [MatchArray]
---            c = ("abaca" =~ "(.)a")
---            d :: Maybe (String,String,String,[String])
---            d = ("abaca" =~~ "(.)a")
---        in do print b
---              print c
---              print d
+-- main = do
+--     print b
+--     print c
+--     print d
+--   where
+--     b :: Bool
+--     b = ("abaca" =~ "(.)a")
+--     c :: [MatchArray]
+--     c = ("abaca" =~ "(.)a")
+--     d :: Maybe (String,String,String,[String])
+--     d = ("abaca" =~~ "(.)a")
 -- @
 --
 -- will output

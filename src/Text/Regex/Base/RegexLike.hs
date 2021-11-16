@@ -71,7 +71,7 @@ data MatchResult a = MR {
 }
 
 
--- | Rather than carry them around spearately, the options for how to
+-- | Rather than carry them around separately, the options for how to
 -- execute a regex are kept as part of the regex.  There are two types
 -- of options.  Those that can only be specified at compilation time
 -- and never changed are @compOpt@.  Those that can be changed later and
