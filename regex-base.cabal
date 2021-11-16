@@ -96,3 +96,5 @@ library
       build-depends: fail == 4.9.*
 
   ghc-options: -Wall
+  if impl(ghc >= 8)
+    ghc-options: -Wcompat

@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE MultiParamTypeClasses, FunctionalDependencies, FlexibleInstances, TypeSynonymInstances #-}
 -----------------------------------------------------------------------------
 -- |
@@ -38,9 +39,9 @@ module Text.Regex.Base.RegexLike (
   AllSubmatches(..),AllTextSubmatches(..),AllMatches(..),AllTextMatches(..)
   ) where
 
-import Prelude hiding (fail)
+#if !MIN_VERSION_base(4,13,0)
 import Control.Monad.Fail as Fail (MonadFail)
-
+#endif
 import Data.Array(Array,(!))
 import Data.Maybe(isJust)
 import qualified Data.ByteString as SB (take,drop,empty,ByteString)

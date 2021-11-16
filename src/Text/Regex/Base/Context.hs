@@ -1,5 +1,11 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE MultiParamTypeClasses, FlexibleInstances, FlexibleContexts, TypeSynonymInstances #-}
+
 {-# OPTIONS_GHC -fno-warn-orphans #-}
+#if __GLASGOW_HASKELL__ >= 702
+{-# OPTIONS_GHC -fno-warn-incomplete-uni-patterns #-}
+#endif
+
 {-|
 
 Module      :  Text.Regex.Base.Context
