@@ -36,7 +36,6 @@ extra-source-files:
   ChangeLog.md
 
 tested-with:
-  -- Haskell CI:
   GHC == 7.0.4
   GHC == 7.2.2
   GHC == 7.4.2

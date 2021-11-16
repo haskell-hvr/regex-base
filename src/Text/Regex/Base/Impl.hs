@@ -4,8 +4,8 @@
 -- Copyright   :  (c) Chris Kuklewicz 2006
 -- SPDX-License-Identifier: BSD-3-Clause
 --
--- Maintainer  :  hvr@gnu.org
--- Stability   :  experimental
+-- Maintainer  :  hvr@gnu.org, Andreas Abel
+-- Stability   :  stable
 -- Portability :  non-portable (Text.Regex.Base needs MPTC+FD)
 --
 -- Helper functions for defining certain instances of
