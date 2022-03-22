@@ -112,7 +112,7 @@ class RegexOptions regex compOpt execOpt
 -- on 'makeRegexOpts' and uses 'defaultCompOpt' and 'defaultExecOpt'.
 -- Similarly for 'makeRegexM' and 'makeRegexOptsM'.
 --
--- There are also default implementaions for 'makeRegexOpts' and
+-- There are also default implementations for 'makeRegexOpts' and
 -- 'makeRegexOptsM' in terms of each other.  So a minimal instance
 -- definition needs to only define one of these, hopefully
 -- 'makeRegexOptsM'.
