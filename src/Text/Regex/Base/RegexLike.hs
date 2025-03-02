@@ -1,12 +1,10 @@
-{-# LANGUAGE CPP #-}
-{-# LANGUAGE MultiParamTypeClasses, FunctionalDependencies, FlexibleInstances, TypeSynonymInstances #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  Text.Regex.Base.RegexLike
 -- Copyright   :  (c) Chris Kuklewicz 2006
 -- SPDX-License-Identifier: BSD-3-Clause
 --
--- Maintainer  :  hvr@gnu.org, Andreas Abel
+-- Maintainer  :  Andreas Abel
 -- Stability   :  stable
 -- Portability :  non-portable (MPTC+FD)
 --
@@ -39,11 +37,18 @@ module Text.Regex.Base.RegexLike (
   AllSubmatches(..),AllTextSubmatches(..),AllMatches(..),AllTextMatches(..)
   ) where
 
-#if !MIN_VERSION_base(4,13,0)
-import Control.Monad.Fail as Fail (MonadFail)
-#endif
+import Prelude
+  (Int, Bool, String
+  , (.), (+)
+  , error, id, return, snd
+  , drop, fmap, length, map, take
+  , toEnum
+  )
+
+
+import Control.Monad.Fail (MonadFail)
 import Data.Array(Array,(!))
-import Data.Maybe(isJust)
+import Data.Maybe(Maybe,isJust,maybe)
 import qualified Data.ByteString as SB (take,drop,empty,ByteString)
 import qualified Data.ByteString.Lazy as LB (take,drop,empty,ByteString)
 import qualified Data.Sequence as S(take,drop,empty,Seq)

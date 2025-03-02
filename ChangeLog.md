@@ -1,5 +1,14 @@
 See also http://pvp.haskell.org/faq
 
+## 0.94.0.3
+
+_2025-03-02 Andreas Abel_
+
+- Drop support for GHC 7
+- Make `Prelude` imports explicit, add `LANGUAGE NoImplicitPrelude`
+- Make upper bounds of dependencies major-major (all are shipped with GHC)
+- Tested with GHC 8.0 - 9.12.1
+
 ## 0.94.0.2 Revision 1
 
 _2022-05-25 Andreas Abel_

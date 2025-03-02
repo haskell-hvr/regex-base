@@ -4,7 +4,7 @@
 -- Copyright   :  (c) Chris Kuklewicz 2006
 -- SPDX-License-Identifier: BSD-3-Clause
 --
--- Maintainer  :  hvr@gnu.org, Andreas Abel
+-- Maintainer  :  Andreas Abel
 -- Stability   :  stable
 -- Portability :  non-portable (Text.Regex.Base needs MPTC+FD)
 --
@@ -40,7 +40,11 @@
 
 module Text.Regex.Base.Impl(polymatch,polymatchM) where
 
-import Prelude hiding (fail)
+import Prelude
+  ( Maybe(Nothing,Just)
+  , ($)
+  , fst, return
+  )
 import Control.Monad.Fail (MonadFail(fail))
 
 import Text.Regex.Base

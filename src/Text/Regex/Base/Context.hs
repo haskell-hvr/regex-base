@@ -1,10 +1,4 @@
-{-# LANGUAGE CPP #-}
-{-# LANGUAGE MultiParamTypeClasses, FlexibleInstances, FlexibleContexts, TypeSynonymInstances #-}
-
-{-# OPTIONS_GHC -fno-warn-orphans #-}
-#if __GLASGOW_HASKELL__ >= 702
-{-# OPTIONS_GHC -fno-warn-incomplete-uni-patterns #-}
-#endif
+{-# OPTIONS_GHC -Wno-orphans #-}
 
 {-|
 
@@ -12,7 +6,7 @@ Module      :  Text.Regex.Base.Context
 Copyright   :  (c) Chris Kuklewicz 2006
 SPDX-License-Identifier: BSD-3-Clause
 
-Maintainer  :  hvr@gnu.org, Andreas Abel
+Maintainer  :  Andreas Abel
 Stability   :  stable
 Portability :  non-portable (MPTC+FD)
 
@@ -192,12 +186,18 @@ Unused matches are 'empty' (defined via 'Extract')
 
 module Text.Regex.Base.Context() where
 
-import Prelude hiding (fail)
-import Control.Monad.Fail (MonadFail(fail)) -- see 'regexFailed'
+import Prelude
+  ( Int
+  , Bool(True,False)
+  , (.), ($), fmap, fst, id, return
+  , length, map
+  , pred
+  )
 
+import Control.Monad.Fail (MonadFail(fail)) -- see 'regexFailed'
 import Control.Monad(liftM)
 import Data.Array(Array,(!),elems,listArray)
---  import Data.Maybe(maybe)
+import Data.Maybe(Maybe(Nothing,Just), maybe)
 import Text.Regex.Base.RegexLike(RegexLike(..),RegexContext(..)
   ,AllSubmatches(..),AllTextSubmatches(..),AllMatches(..),AllTextMatches(..)
   ,MatchResult(..),Extract(empty),MatchOffset,MatchLength,MatchArray,MatchText)

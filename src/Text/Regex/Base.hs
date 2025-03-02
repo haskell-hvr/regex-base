@@ -1,4 +1,3 @@
-{-# LANGUAGE MultiParamTypeClasses, FunctionalDependencies #-}
 -----------------------------------------------------------------------------
 -- |
 --
@@ -6,7 +5,7 @@
 -- Copyright   :  (c) Chris Kuklewicz 2006
 -- SPDX-License-Identifier: BSD-3-Clause
 --
--- Maintainer  :  hvr@gnu.org, Andreas Abel
+-- Maintainer  :  Andreas Abel
 -- Stability   :  stable
 -- Portability :  non-portable (MPTC+FD)
 --
@@ -72,7 +71,7 @@ module Text.Regex.Base (getVersion_Text_Regex_Base
   -- | RegexLike defines classes and type, and 'Extract' instances
   ,module Text.Regex.Base.RegexLike) where
 
-import Data.Version(Version(..))
+import Data.Version(Version)
 import Text.Regex.Base.RegexLike
 import Text.Regex.Base.Context()
 
